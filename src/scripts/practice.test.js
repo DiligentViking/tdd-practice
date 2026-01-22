@@ -1,4 +1,4 @@
-const { capitalize, reverseString } = require("./practice.js");
+const { capitalize, reverseString, calculator } = require("./practice.js");
 
 test("capitalizes one-character string", () => {
   expect(capitalize("d")).toBe("D");
@@ -18,4 +18,17 @@ test("works on string of multiple chars", () => {
 });
 test("works on string of special chars", () => {
   expect(reverseString("Urbain :)")).toBe("): niabrU");
+});
+
+test("31 + -41 = -10", () => {
+  expect(calculator().add(31, -41)).toBe(-10);
+});
+test("1000000000 - 800000000 = 200000000", () => {
+  expect(calculator().sub(1000000000, 800000000)).toBe(200000000);
+});
+test("-5.1 * 28 = -142.8", () => {
+  expect(calculator().mul(-5.1, 28)).toBeCloseTo(-142.8);
+});
+test("7 / 11 = 0.6363...", () => {
+  expect(calculator().div(7, 11)).toBeCloseTo(0.6363);
 });

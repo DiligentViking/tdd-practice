@@ -3,11 +3,28 @@ function capitalize(str) {
 }
 
 function reverseString(str) {
-  let newStr = '';
+  let newStr = "";
   for (const char of str) {
     newStr = char + newStr;
   }
   return newStr;
 }
 
-module.exports = { capitalize, reverseString };
+function calculator() {
+  return {
+    add(a, b) {
+      return a + b;
+    },
+    sub(a, b) {
+      return a - b;
+    },
+    mul(a, b) {
+      return a * b;
+    },
+    div(a, b) {
+      return a / b;
+    },
+  };
+}
+
+module.exports = { capitalize, reverseString, calculator };
