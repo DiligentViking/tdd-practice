@@ -17,5 +17,15 @@ export default defineConfig([
 			"no-unused-vars": "warn",
 		},
 	},
+  {
+		languageOptions: {
+			globals: {
+				module: "readonly",
+				require: "readonly",
+        test: "readonly",
+        expect: "readonly",
+			},
+		},
+	},
   globalIgnores(["webpack.*"]),
 ]);
