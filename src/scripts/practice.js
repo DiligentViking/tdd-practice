@@ -27,4 +27,27 @@ function calculator() {
   };
 }
 
-module.exports = { capitalize, reverseString, calculator };
+function caesarCipher(str, shift) {
+  const lower = "abcdefghijklmnopqrstuvwxyz";
+  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let newStr = "";
+  for (const char of str) {
+    let alphabet;
+    if (lower.includes(char)) {
+      alphabet = lower;
+    } else if (upper.includes(char)) {
+      alphabet = upper;
+    } else {
+      newStr += char;
+      continue;
+    }
+    let newIndex = alphabet.indexOf(char) + shift;
+    if (newIndex > 25) {
+      newIndex = newIndex - 25 - 1;
+    }
+    newStr += alphabet[newIndex];
+  }
+  return newStr;
+}
+
+module.exports = { capitalize, reverseString, calculator, caesarCipher };

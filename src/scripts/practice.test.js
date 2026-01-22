@@ -1,4 +1,9 @@
-const { capitalize, reverseString, calculator } = require("./practice.js");
+const {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+} = require("./practice.js");
 
 test("capitalizes one-character string", () => {
   expect(capitalize("d")).toBe("D");
@@ -31,4 +36,20 @@ test("-5.1 * 28 = -142.8", () => {
 });
 test("7 / 11 = 0.6363...", () => {
   expect(calculator().div(7, 11)).toBeCloseTo(0.6363);
+});
+
+test("shifts one-char string", () => {
+  expect(caesarCipher("h", 1)).toBe("i");
+});
+test("shifts multi-char string", () => {
+  expect(caesarCipher("ace", 6)).toBe("gik");
+});
+test("wraps shift across z-a", () => {
+  expect(caesarCipher("yza", 1)).toBe("zab");
+});
+test("preserves letter case", () => {
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+test("accepts special chars", () => {
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
