@@ -1,7 +1,11 @@
-<h1 align="center"> 📜 Efficientus 📜 <h1>
+<h1 align="center"> 🔴 TDD Practice 🟢 </h1>
 
-<h3 align="center">“<i>Invenire viam efficientissimam</i> -- Find the most efficient way”</h3>
+A TOP practice project to get the feel of the Test Driven Development methodology.
 
-___
+TDD is so good because it facilitates ensuring everything works, it gives you confidence and direction which improves eff.
 
-A TOP to-do list project.  I hope you find it an innovative and intuitive app to help you live/love your life.
+Red -> Green -> Refactor -> Repeat!
+
+![](./src/assets/images/tdd-process-3092013833.png)
+
+You gotta clarify your goals, y'know?
