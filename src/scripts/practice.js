@@ -28,24 +28,23 @@ function calculator() {
 }
 
 function caesarCipher(str, shift) {
-  const lower = "abcdefghijklmnopqrstuvwxyz";
-  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
   let newStr = "";
   for (const char of str) {
-    let alphabet;
-    if (lower.includes(char)) {
-      alphabet = lower;
-    } else if (upper.includes(char)) {
-      alphabet = upper;
-    } else {
+    let isUpper = char === char.toUpperCase() ? true : false;
+    const index = ALPHABET.indexOf(char.toLowerCase());
+    if (index === -1) {
       newStr += char;
       continue;
     }
-    let newIndex = alphabet.indexOf(char) + shift;
+    let newIndex = index + shift;
     if (newIndex > 25) {
       newIndex = newIndex - 25 - 1;
     }
-    newStr += alphabet[newIndex];
+    const newChar = isUpper
+      ? ALPHABET[newIndex].toUpperCase()
+      : ALPHABET[newIndex];
+    newStr += newChar;
   }
   return newStr;
 }
