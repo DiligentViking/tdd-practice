@@ -3,6 +3,7 @@ const {
   reverseString,
   calculator,
   caesarCipher,
+  analyzeArray,
 } = require("./practice.js");
 
 test("capitalizes one-character string", () => {
@@ -52,4 +53,25 @@ test("preserves letter case", () => {
 });
 test("accepts special chars", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("calculates average", () => {
+  expect(analyzeArray([3, 1, 4, 2, 5]).average).toBe(3);
+});
+test("calculates min", () => {
+  expect(analyzeArray([3, 1, 4, 2, 5]).min).toBe(1);
+});
+test("calculates max", () => {
+  expect(analyzeArray([3, 1, 4, 2, 5]).max).toBe(5);
+});
+test("calculates length", () => {
+  expect(analyzeArray([3, 1, 4, 2, 5]).length).toBe(5);
+});
+test("contains every property", () => {
+  expect(
+    analyzeArray([3, 1, 4, 2, 5]).average &&
+      analyzeArray([3, 1, 4, 2, 5]).min &&
+      analyzeArray([3, 1, 4, 2, 5]).max &&
+      analyzeArray([3, 1, 4, 2, 5]).length,
+  ).toBeDefined();
 });
